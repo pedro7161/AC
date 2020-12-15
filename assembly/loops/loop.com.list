@@ -1,0 +1,66 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+loop.com -- emu8086 assembler version: 4.08  
+ 
+[ 15/12/2020  --  12:25:07 ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       ; pratica_001_14_12_20.asm
+[   2]        :                                       ;
+[   3]        :                                       ; Experimentos com os comandos loop, jz e jnz
+[   4]        :                                       
+[   5]        :                                       ; Executa ciclos para mostrar um conjunto de asteriscos no ecra
+[   6]        :                                       ;
+[   7]        :                                       ; controlados pelos comandos loop, jz e jnz
+[   8]        :                                       
+[   9]        :                                       
+[  10]        :                                       ; Mostra 8 asteriscos no ecra usando ciclos
+[  11]        :                                       
+[  12]        :                                       
+[  13]        :                                       	#make_COM#
+[  14]        :                                       
+[  15]        :                                       ORG  100H
+[  16]    0100: EB 02                                 jmp inicio
+[  17]        :                                       
+[  18]        :                                       	
+[  19]        :                                       ; Alocacao de dados
+[  20]        :                                       
+[  21]    0102: EB 00                                 	.Data
+[  22]        :                                       
+[  23]        :                                       
+[  24]        :                                       ; Area de codigo (instrucoes/comandos)
+[  25]        :                                       
+[  26]    0104:                                       inicio:
+[  27]        :                                       
+[  28]    0104:                                       	.Code
+[  29]        :                                       	
+[  30]    0104: B9 08 00                              	mov cx, 8 ;numero de loops
+[  31]    0107: B4 02                                 	mov ah, 2
+[  32]    0109: B2 21                                 	mov dl, '!' ;  o que vai ser escrito no loop
+[  33]    010B:                                       l1:
+[  34]    010B: CD 21                                 int 21h
+[  35]    010D: 49                                    dec cx  ;vai reduzindo o valor de cx ate zero
+[  36]    010E: 74 FB                                 jz l1
+[  37]        :                                       
+[  38]        :                                       
+[  39]        :                                       ; O programa esta terminado
+[  40]        :                                       
+[  41]    0110:                                       fim:
+[  42]    0110: B4 4C                                 MOV AH, 4Ch
+[  43]    0112: CD 21                                 INT 21h
+[  44]        :                                       
+[  45]        :                                       
+[  46]        :                                       
+[  47]        :                                       
+[  48]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================
